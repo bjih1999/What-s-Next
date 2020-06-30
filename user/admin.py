@@ -5,9 +5,10 @@ from .models import User
 
 @admin.register(User)
 class UserAdmin(admin.ModelAdmin):
-    list_display = ('id', 'email', 'name', 'gender', 'age', 'joined_at', 'last_login_at', 'is_superuser', 'is_active',)
-    list_display_links = ('id', 'email',)
-    exclude = ('password',)
+    list_display = ('id', 'email', 'name', 'gender', 'age', 'joined_at', 'last_login_at', 'is_superuser', 'is_active','password',)
+    list_display_links = ('email',)
+    list_editable = ('id',)
+    #exclude = ('password',)
 
     def joined_at(self, obj):
         return obj.date_joined.strftime("%Y-%m-%d")

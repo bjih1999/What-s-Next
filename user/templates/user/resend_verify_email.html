@@ -37,20 +37,17 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'index' %}">Home</a>
+            <a class="nav-link" href="{% url "index" %}">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="예능.html">예능</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="드라마.html">드라마</a>
+            <a class="nav-link" href="{% url "contents" %}">콘텐츠</a>
           </li>
           {% if request.user.is_authenticated %}
           <li class="nav-item">
-            <a class="nav-link" href="MY.html">MY</a>
+            <a class="nav-link" href="{% url "mypage" %}">MY</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="{% url 'logout' %}">로그아웃</a>
+            <a class="nav-link" href="{% url "logout" %}">로그아웃</a>
           </li>
           {% else %}
           <li class="nav-item">

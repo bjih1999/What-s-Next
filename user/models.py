@@ -71,3 +71,4 @@ class User(AbstractBaseUser, PermissionsMixin):
 
     def email_user(self, subject, message, from_email=None, **kwargs): # 이메일 발송 메소드
         send_mail(subject, message, from_email, [self.email], **kwargs)
+
